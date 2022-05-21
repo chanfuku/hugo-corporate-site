@@ -43,13 +43,14 @@
   name = "サービス"
   weight = 10
   identifier = "service"
-  url = "/docs/prologue/introduction/"
+  # url = "/services/"
 
 [[main]]
   name = "レガシーシステム"
   weight = 11
   identifier = "legacy-stystem"
-  url = "/docs/prologue/quick-start/"
+  # url = "/docs/prologue/quick-start/"
+  url = "/services/legacy-system/"
   parent = "service"
 
 [[main]]
@@ -103,7 +104,12 @@
 #   url = "https://twitter.com/getdoks"
 #   weight = 20
 
-# [[footer]]
-#   name = "Privacy"
-#   url = "/privacy-policy/"
-#   weight = 10
+[[footer]]
+  name = "プライバシーポリシー"
+  url = "/privacy-policy/"
+  weight = 10
+
+[[footer]]
+  name = "cookieポリシー"
+  url = "/cookie-policy/"
+  weight = 20

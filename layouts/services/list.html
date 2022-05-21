@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="row justify-content-center mb-8">
+	<div class="col-md-12 col-lg-10 col-xl-8">
+		<article>
+			<div class="mb-5">
+				<h1>{{ .Title }}</h1>
+				<p>{{ .Description }}</p>
+			</div>
+			<div class="mb-5">
+				<h2>課題解決</h2>
+				<p>{{ .Content }}</p>
+			</div>
+			<div class="mb-5">
+				<h2>問い合わせ</h2>
+				<div class="container">
+					<div class="row justify-content-center text-center">
+						<p>レガシーシステム、CMS、JAMStack、FAMEAL、採用に関することはお気軽にご相談ください</p>
+						<button type="button" class="btn btn-outline-dark w-50">問い合わせする →</button>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>
+{{ end }}
