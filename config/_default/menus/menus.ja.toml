@@ -56,7 +56,18 @@
   name = "CMS"
   weight = 12
   identifier = "cms"
-  url = "https://getdoks.org/tutorial/introduction/"
+  parent = "service"
+
+[[main]]
+  name = "JAMStack"
+  weight = 13
+  identifier = "jam-stack"
+  parent = "service"
+
+[[main]]
+  name = "FAMEAL"
+  weight = 14
+  identifier = "fameal"
   parent = "service"
 
 [[main]]
