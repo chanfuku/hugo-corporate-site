@@ -72,14 +72,20 @@ body.docs {
   font-size: calc(1.875rem + 1.5vw);
 }
 
+/*
 a:hover,
 a:focus {
   text-decoration: underline;
 }
+*/
 
 a.btn:hover,
 a.btn:focus {
   text-decoration: none;
+}
+
+a {
+  color: unset;
 }
 
 .section {
