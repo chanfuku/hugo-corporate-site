@@ -1,10 +1,10 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Doks"
+title = "nanode"
 titleSeparator = "-"
-titleAddition = "Modern Documentation Theme"
-description = "Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize."
+titleAddition = "余計なものを作らない下町のIT企業"
+description = "簡単な会社の説明簡単な会社の説明簡単な会社の説明"
 
 ## Documentation
 # docsVersion = "0.3"
