@@ -87,7 +87,7 @@
   weight = 40
 
 [[main]]
-  name = "お問い合わせ"
+  name = "問い合わせ"
   url = "/contact/"
   weight = 50
 
