@@ -10,8 +10,8 @@ description = "簡単な会社の説明簡単な会社の説明簡単な会社�
 # docsVersion = "0.3"
 
 ## Open Graph
-images = ["doks.png"]
-ogLocale = "en_US"
+images = ["/images/logo.png"]
+ogLocale = "ja"
 domainTLD = "doks.netlify.app"
 titleHome = "Doks Theme"
 
