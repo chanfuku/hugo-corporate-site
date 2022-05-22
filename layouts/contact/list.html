@@ -12,41 +12,128 @@
 			</div>
 			<div class="mb-5">
 				<div class="container mt-5">
-					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSff7m2sEZJGTHhR2C2ywMBTGTIuQupuHr5OLWHpFTVrHFOq4A/viewform?embedded=true" width="100%" height="1082" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-					<!--
-					<form action="https://docs.google.com/forms/d/e/1FAIpQLSff7m2sEZJGTHhR2C2ywMBTGTIuQupuHr5OLWHpFTVrHFOq4A/viewform?usp=sf_link">
-						<p>
-							<label>メールアドレス</label><input type="text" name="emailAddress">
-						</p>
-						<p>
-						<label>お問い合わせ内容</label>
-						<select name="entry.838418093">
-							<option value="お見積りについて">お見積りについて</option>
-							<option value="採用について">採用について</option>
-							<option value="ご質問">ご質問</option>
-							<option value="その他">その他</option>
-						</select>
-						</p>
-						<p>
-						<label>お名前</label><input type="text" name="entry.2005620554">
-						</p>
-						<p>
-						<label>会社名</label><input type="text" name="entry.1164106526">
-						</p>
-						<p>
-						問い合わせ内容<textarea name="entry.839337160"></textarea>
-						</p>
-						<p>
-      			当社の個人情報の取り扱いに同意する<input type="checkbox" name="entry.1680877510" id="agree" value="はい">
-      			<label for="agree">はい</label>
-						</p>
-						<input type="hidden" name="emailReceipt" value="true">
-						<input type="submit" value="送信">
+					<div id="thank-you-message" class="row justify-content-center text-center d-none">
+						<p>お問い合わせいただきありがとうございます。</p>
+					</div>
+					<form class="needs-validation" novalidate>
+						<div class="row mb-4 position-relative">
+							<label class="col-form-label col-md-6" for="contactReason">問い合わせ内容</label>
+							<div class="col-md-10">
+								<select name="contactReason" class="form-select" id="contactReason" required>
+									<option selected disabled value="">選択してください</option>
+									<option value="お見積りのご依頼">お見積りのご依頼</option>
+									<option value="採用">採用</option>
+									<option value="ご質問">ご質問</option>
+									<option value="その他">その他</option>
+								</select>
+								<div class="invalid-feedback">
+									問い合わせ内容を選択してください
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb-4">
+							<label class="col-form-label col-md-6" for="customerName">お名前</label>
+							<div class="col-md-10">
+								<input type="text" class="form-control" id="name" placeholder="" name="customerName" required>
+								<div class="invalid-feedback">
+									お名前を入力してください
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb-4">
+							<label class="col-form-label col-md-6" for="companyName">会社名</label>
+							<div class="col-md-10">
+								<input type="text" class="form-control" id="companyName" placeholder="" name="companyName">
+							</div>
+						</div>
+
+						<div class="row mb-4">
+							<label class="col-form-label col-md-6" for="email">メールアドレス</label>
+							<div class="col-md-10">
+								<input type="email" class="form-control" id="email" placeholder="" name="email" required>
+								<div class="invalid-feedback">
+									メールアドレスを入力してください
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb-4">
+							<label class="col-form-label col-md-6" for="contactMessage">お問い合わせ内容</label>
+							<div class="col-md-10">
+								<textarea class="form-control" id="contactMessage" name="contactMessage" rows="5" placeholder=""
+									required></textarea>
+								<div class="invalid-feedback">
+									お問い合わせ内容を入力してください
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb-4">
+							<div class="form-check ps-5">
+								<input class="form-check-input mb-4" type="checkbox" name="agree" value="同意する" id="agree" required>
+								<label class="form-check-label" for="agree">
+									当社の個人情報の取り扱いに同意する
+								</label>
+								<div class="invalid-feedback">
+									個人情報の取り扱いに同意してください
+								</div>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<button type="submit" id="submitBtn" class="btn btn-outline-dark w-60">
+								<span id="spinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+								送信する →
+							</button>
+						</div>
 					</form>
-					-->
 				</div>
 			</div>
 		</article>
 	</div>
 </div>
+<script>
+	(function () {
+		'use strict'
+
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		const forms = document.querySelectorAll('.needs-validation')
+		const submitBtn = document.getElementById('submitBtn')
+		const spinner = document.getElementById('spinner')
+		const thankyouMessage = document.getElementById('thank-you-message')
+
+		// Loop over them and prevent submission
+		Array.prototype.slice.call(forms)
+			.forEach(function (form) {
+				form.addEventListener('submit', function (event) {
+					// change button state to disabled for avoiding double submitting
+					submitBtn.classList.toggle('disabled')
+					spinner.classList.toggle('d-none')
+
+					form.classList.add('was-validated')
+					event.preventDefault()
+					event.stopPropagation()
+					if (!form.checkValidity()) {
+						submitBtn.classList.toggle('disabled')
+						spinner.classList.toggle('d-none')
+						return
+					}
+
+					fetch("https://getform.io/f/921ff9ee-6e6f-4007-b44c-af94bb7c2389", {
+						method: "POST",
+						body: new FormData(form),
+					})
+						.then(response => {
+							form.classList.add('d-none')
+							thankyouMessage.classList.remove('d-none')
+							submitBtn.classList.toggle('disabled')
+							spinner.classList.toggle('d-none')
+						})
+						.catch(error => console.log(error))
+				}, false)
+			})
+	})()
+</script>
 {{ end }}
