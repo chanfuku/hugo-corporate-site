@@ -15,7 +15,7 @@
 					<div id="thank-you-message" class="row justify-content-center text-center d-none">
 						<p>お問い合わせいただきありがとうございます。</p>
 					</div>
-					<form class="needs-validation" novalidate>
+					<form name="contact" class="needs-validation"  data-netlify="true" novalidate>
 						<div class="row mb-4 position-relative">
 							<label class="col-form-label col-md-7" for="contactReason">問い合わせ項目<span class="badge bg-light text-dark ms-2">必須</span></label>
 							<div class="col-md-9">
@@ -35,7 +35,7 @@
 						<div class="row mb-4">
 							<label class="col-form-label col-md-7" for="customerName">お名前<span class="badge bg-light text-dark ms-2">必須</span></label>
 							<div class="col-md-9">
-								<input type="text" class="form-control" id="name" placeholder="お名前をご入力ください" name="customerName" required>
+								<input type="text" class="form-control" id="customerName" placeholder="お名前をご入力ください" name="customerName" required>
 								<div class="invalid-feedback">
 									お名前を入力してください
 								</div>
@@ -121,9 +121,12 @@
 						return
 					}
 
-					fetch("https://getform.io/f/921ff9ee-6e6f-4007-b44c-af94bb7c2389", {
+					// fetch("https://getform.io/f/921ff9ee-6e6f-4007-b44c-af94bb7c2389", {
+					fetch("/", {
 						method: "POST",
-						body: new FormData(form),
+						headers: { "Content-Type": "application/x-www-form-urlencoded" },
+						// body: new FormData(form),
+						body: new URLSearchParams(new FormData(form)).toString(),
 					})
 						.then(response => {
 							form.classList.add('d-none')

@@ -54,7 +54,7 @@ lqipWidth = "20x"
 smallLimit = "300"
 
 # Footer
-footer = "© nanode inc. ALL Rights Reserved."
+footer = "© Nanode Corp. ALL Rights Reserved."
 
 # Feed
 copyRight = "Copyright (c) 2020-2021 Henk Verlinde"
