@@ -7,7 +7,9 @@
 				<p>{{ .Description }}</p>
 			</div>
 			<div class="mb-5">
-				<h2>課題解決</h2>
+  			{{ if .Params.showProblemSolution }}
+					<h2>課題解決</h2>
+				{{ end }}
 				<p>{{ .Content }}</p>
 			</div>
 			<div class="mb-5">

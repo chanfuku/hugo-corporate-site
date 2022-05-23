@@ -49,7 +49,6 @@
   name = "レガシーシステム"
   weight = 11
   identifier = "legacy-stystem"
-  # url = "/docs/prologue/quick-start/"
   url = "/services/legacy-system/"
   parent = "service"
 
@@ -57,18 +56,21 @@
   name = "CMS"
   weight = 12
   identifier = "cms"
+  url = "/services/cms/"
   parent = "service"
 
 [[main]]
   name = "JAMStack"
   weight = 13
   identifier = "jam-stack"
+  url = "/services/jam-stack/"
   parent = "service"
 
 [[main]]
   name = "FAMEAL"
   weight = 14
   identifier = "fameal"
+  url = "/services/fameal/"
   parent = "service"
 
 [[main]]
