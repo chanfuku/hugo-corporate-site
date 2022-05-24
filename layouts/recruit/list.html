@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="row justify-content-center mb-8">
+	<div class="col-md-12 col-lg-10 col-xl-8">
+		<article>
+			<div class="mb-5">
+				<h1 class="mb-5">{{ .Title }}</h1>
+				<p class="text-center">
+					正社員は募集していません。<br>
+					現在パートナー（フリーランス）を募集しています。<br>
+					私たちは既存の常識にとらわれない、新たな会社作りを目指しています。<br>
+					メンバーの1人ひとりが個性を発揮し、お互いを尊重し、結果としてみんなが幸せになる。<br>
+					そのためにはメンバーの才能が最大限に発揮される場でありたいと考えています。<br>
+					私たちは、多くの新しい才能や個性に出会いたいと思っています。<br>
+					ぜひ、ご応募をお待ちしております。<br>
+				</p>
+			</div>
+			<div class="mb-5">
+				<h2 class="mb-5">募集職種</h2>
+				<div class="mb-5">
+					<div class="container mt-5">
+						<hr>
+						<p>ディレクター</p>
+						<hr>
+						<p>エンジニア</p>
+						<hr>
+						<p>デザイナー</p>
+						<hr>
+					</div>
+				</div>
+			</div>
+			{{ partial "main/to-contact.html" . -}}
+		</article>
+	</div>
+</div>
+{{ end }}
