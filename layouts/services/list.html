@@ -1,19 +1,19 @@
 {{ define "main" }}
 <div class="row justify-content-center mb-8">
-	<div class="col-md-12 col-lg-10 col-xl-8">
-		<article>
-			<div class="mb-5">
-				<h1 class="mb-5">{{ .Title }}</h1>
-				<p>{{ .Description }}</p>
-			</div>
-			<div class="mb-5">
-				{{ if .Params.showProblemSolution }}
-				<h2 class="mb-5">課題解決</h2>
-				{{ end }}
-				<p>{{ .Content }}</p>
-			</div>
-			{{ partial "main/to-contact.html" . -}}
-		</article>
-	</div>
+  <div class="col-md-12 col-lg-10 col-xl-8">
+    <article>
+      <div class="mb-5">
+        <h1 class="mb-5">{{ .Title }}</h1>
+        <p>{{ .Description }}</p>
+      </div>
+      <div class="mb-5">
+        {{ if .Params.showProblemSolution }}
+        <h2 class="mb-5">課題解決</h2>
+        {{ end }}
+        <p>{{ .Content }}</p>
+      </div>
+      {{ partial "main/to-contact.html" . -}}
+    </article>
+  </div>
 </div>
 {{ end }}

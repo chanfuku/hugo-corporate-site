@@ -1,46 +1,46 @@
 {{ define "main" }}
 <div class="row justify-content-center mb-8">
-	<div class="col-md-12 col-lg-10 col-xl-10">
-		<article>
-			<div class="mb-5">
-				<h1>{{ .Title }}</h1>
-			</div>
-			<div class="mb-5">
-				<div class="container mt-5">
-					<div class="row mb-4">
-						<div class="col-md-5 fw-bold">会社名</div>
-						<div class="col-md-10">
-							ナノード株式会社
-						</div>
-					</div>
-					<div class="row mb-4">
-						<div class="col-md-5 fw-bold">所在地</div>
-						<div class="col-md-10">
-							〒130-0026<br>
-							東京都墨田区両国1丁目8番4号両国坂本ビル702
-						</div>
-					</div>
-					<div class="row mb-4">
-						<div class="col-md-5 fw-bold">代表取締役</div>
-						<div class="col-md-10">
-							中野　高顕
-						</div>
-					</div>
-					<div class="row mb-4">
-						<div class="col-md-5 fw-bold">取締役</div>
-						<div class="col-md-10">
-							田中　悠介
-						</div>
-					</div>
-					<div class="row mb-4">
-						<div class="col-md-5"></div>
-						<div class="col-md-10">
-							中澤　成志
-						</div>
-					</div>
-				</div>
-			{{ partial "main/to-contact.html" . -}}
-		</article>
-	</div>
+  <div class="col-md-12 col-lg-10 col-xl-10">
+    <article>
+      <div class="mb-5">
+        <h1>{{ .Title }}</h1>
+      </div>
+      <div class="mb-5">
+        <div class="container mt-5">
+          <div class="row mb-4">
+            <div class="col-md-5 fw-bold">会社名</div>
+            <div class="col-md-10">
+              ナノード株式会社
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-5 fw-bold">所在地</div>
+            <div class="col-md-10">
+              〒130-0026<br>
+              東京都墨田区両国1丁目8番4号両国坂本ビル702
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-5 fw-bold">代表取締役</div>
+            <div class="col-md-10">
+              中野　高顕
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-5 fw-bold">取締役</div>
+            <div class="col-md-10">
+              田中　悠介
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-5"></div>
+            <div class="col-md-10">
+              中澤　成志
+            </div>
+          </div>
+        </div>
+      {{ partial "main/to-contact.html" . -}}
+    </article>
+  </div>
 </div>
 {{ end }}
