@@ -67,13 +67,6 @@
   parent = "service"
 
 [[main]]
-  name = "FAMEAL"
-  weight = 14
-  identifier = "fameal"
-  url = "/services/fameal/"
-  parent = "service"
-
-[[main]]
   name = "ブログ"
   url = "/blog/"
   weight = 20
