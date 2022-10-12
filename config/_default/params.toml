@@ -1,9 +1,9 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "nanode"
+title = "sample corporate site"
 titleSeparator = "-"
-titleAddition = "余計なものを作らない下町のIT企業"
+titleAddition = "タイトルですタイトルですタイトルです"
 description = "簡単な会社の説明簡単な会社の説明簡単な会社の説明"
 
 ## Documentation
@@ -54,7 +54,7 @@ lqipWidth = "20x"
 smallLimit = "300"
 
 # Footer
-footer = "© Nanode Corp. ALL Rights Reserved."
+footer = "© サンプル Corp. ALL Rights Reserved."
 
 # Feed
 copyRight = "Copyright (c) 2020-2021 Henk Verlinde"
